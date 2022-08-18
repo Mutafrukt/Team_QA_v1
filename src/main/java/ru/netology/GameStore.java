@@ -8,6 +8,8 @@ import java.util.Map;
 public class GameStore {
     private List<Game> games = new ArrayList<>();
 
+    ///коммит для проверки///
+
     /**
      * Информация о том, какой игрок сколько играл в игры этого каталога
      * Ключ - имя игрока
