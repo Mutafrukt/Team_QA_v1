@@ -8,14 +8,15 @@ import java.util.Map;
 public class GameStore {
     private List<Game> games = new ArrayList<>();
 
-    ///коммит для проверки///
-
     /**
      * Информация о том, какой игрок сколько играл в игры этого каталога
      * Ключ - имя игрока
      * Значение - суммарное количество часов в игры этого каталога
      */
     private Map<String, Integer> playedTime = new HashMap<>();
+
+
+    /// TESTS DONE /// не проходит
 
     /**
      * Создание объекта игры с заданными заголовком и жанром
@@ -26,6 +27,8 @@ public class GameStore {
         games.add(game);
         return game;
     }
+
+    /// TESTS DONE /// не проходит
 
     /**
      * Проверяет наличие игры в каталоге и возврашает true
@@ -40,6 +43,8 @@ public class GameStore {
         return false;
     }
 
+// TESTS DONE /// не проходит
+
     /**
      * Регистрирует количество времени, которое проиграл игрок
      * за игрой этого каталога. Игрок задаётся по имени. Время должно
@@ -52,6 +57,8 @@ public class GameStore {
             playedTime.put(playerName, hours);
         }
     }
+
+//   TESTS DONE ///
 
     /**
      * Ищет имя игрока, который играл в игры этого каталога больше всего
@@ -69,6 +76,9 @@ public class GameStore {
         }
         return bestPlayer;
     }
+
+    //// НЕ РЕАЛИЗОВАН МЕТОД //////
+    /// TESTS DONE ///
 
     /**
      * Суммирует общее количество времени всех игроков, проведённого
