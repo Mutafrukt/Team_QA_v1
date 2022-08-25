@@ -16,8 +16,6 @@ public class GameStore {
     private Map<String, Integer> playedTime = new HashMap<>();
 
 
-    /// TESTS DONE /// не проходит
-
     /**
      * Создание объекта игры с заданными заголовком и жанром
      * Каждый объект игры помнит объект каталога, которому она принадлежит
@@ -28,14 +26,13 @@ public class GameStore {
         return game;
     }
 
-    /// TESTS DONE /// не проходит
 
     /**
      * Проверяет наличие игры в каталоге и возврашает true
      * если игра есть и false иначе
      */
     public boolean containsGame(Game game) {
-        for (int i = 1; i < games.size(); i++) {
+        for (int i = 1; i <= games.size(); i++) {
             if (games.get(i - 1).equals(game)) {
                 return true;
             }
@@ -43,7 +40,6 @@ public class GameStore {
         return false;
     }
 
-// TESTS DONE /// не проходит
 
     /**
      * Регистрирует количество времени, которое проиграл игрок
@@ -52,20 +48,19 @@ public class GameStore {
      */
     public void addPlayTime(String playerName, int hours) {
         if (playedTime.containsKey(playerName)) {
-            playedTime.put(playerName, playedTime.get(playerName));
+            playedTime.put(playerName, playedTime.get(playerName) + hours);
         } else {
             playedTime.put(playerName, hours);
         }
     }
 
-//   TESTS DONE ///
 
     /**
      * Ищет имя игрока, который играл в игры этого каталога больше всего
      * времени. Если игроков нет, то возвращется null
      */
     public String getMostPlayer() {
-        int mostTime = 1;
+        int mostTime = 0;
         String bestPlayer = null;
         for (String playerName : playedTime.keySet()) {
             int playerTime = playedTime.get(playerName);
@@ -77,14 +72,16 @@ public class GameStore {
         return bestPlayer;
     }
 
-    //// НЕ РЕАЛИЗОВАН МЕТОД //////
-    /// TESTS DONE ///
 
     /**
      * Суммирует общее количество времени всех игроков, проведённого
      * за играми этого каталога
      */
     public int getSumPlayedTime() {
-        return 0;
+        int sum = 0;
+        for (int value : playedTime.values()) {
+            sum += value;
+        }
+        return sum;
     }
 }

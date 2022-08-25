@@ -67,6 +67,7 @@ public class GameStoreTest {
         store.addPlayTime("Jerry", 2);
         store.addPlayTime("Jerry", 4);
 
+        Assertions.assertEquals(18, store.getSumPlayedTime());
     }
 
     @Test
